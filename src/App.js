@@ -77,7 +77,7 @@ onInputChange = (event) => {
 //button detect clarifai api
 onButtonSubmit = () => {
   this.setState({imageUrl : this.state.input});
-  fetch('https://protected-river-65588.herokuapp.com/imageurl',{
+  fetch('',{
     method : 'post',
     headers : {'Content-Type' : 'application/json'},
     body : JSON.stringify ({
@@ -87,7 +87,7 @@ onButtonSubmit = () => {
     .then(response => response.json())
     .then(response => {
       if(response) {
-        fetch('https://protected-river-65588.herokuapp.com/image',{
+        fetch('',{
           method : 'put',
           headers : {'Content-Type' : 'application/json'},
           body : JSON.stringify ({
