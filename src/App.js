@@ -77,7 +77,7 @@ onInputChange = (event) => {
 //button detect clarifai api
 onButtonSubmit = () => {
   this.setState({imageUrl : this.state.input});
-  fetch('',{
+  fetch('https://morning-wave-29430.herokuapp.com/imageurl',{
     method : 'post',
     headers : {'Content-Type' : 'application/json'},
     body : JSON.stringify ({
@@ -87,7 +87,7 @@ onButtonSubmit = () => {
     .then(response => response.json())
     .then(response => {
       if(response) {
-        fetch('',{
+        fetch('https://morning-wave-29430.herokuapp.com/image',{
           method : 'put',
           headers : {'Content-Type' : 'application/json'},
           body : JSON.stringify ({
